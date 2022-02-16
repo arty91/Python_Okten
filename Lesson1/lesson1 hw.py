@@ -6,11 +6,10 @@ st = 'as 23 fdfdg544' введена строка
 '''
 
 # def func1(string):
-#     return ([int(i) for i in string if i.isnumeric()])
-#
+#     return ','.join(str(el) for el in string if el.isnumeric())
 #
 # print(func1('as 23 fdfdg544'))
-import re
+
 
 '''
 2)написати прогу яка вибирає зі введеної строки числа і виводить їх 
@@ -26,6 +25,14 @@ import re
 #
 #
 # print(func2('as 23 fdfdg544 34'))
+
+# without import:
+# def func2(string):
+#     return [int(i) for i in ''.join((x if x in '0123456789' else ' ') for x in string).split()]
+#
+#
+# print(func2('as 23 fdfdg544 34'))
+
 
 '''
 list comprehension
@@ -87,7 +94,7 @@ greeting = 'Hello, world'
 # - створити функцію яка повертає найбільше число з ліста
 
 # def func6(ls):
-#     return max(ls)
+#     return min(ls)
 #
 #
 # print(func6([11, 22, 33, 5, 88, 99, 13, 15]))
