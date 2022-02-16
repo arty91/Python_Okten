@@ -26,10 +26,9 @@ st = 'as 23 fdfdg544' введена строка
 #
 # print(func2('as 23 fdfdg544 34'))
 
-# without import:
+#without import:
 # def func2(string):
-#     return [int(i) for i in ''.join((x if x in '0123456789' else ' ') for x in string).split()]
-#
+#     return ','.join(str(el) for el in [int(i) for i in ''.join((x if x in '0123456789' else ' ') for x in string).split()])
 #
 # print(func2('as 23 fdfdg544 34'))
 
