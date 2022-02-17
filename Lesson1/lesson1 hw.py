@@ -186,11 +186,3 @@ greeting = 'Hello, world'
 #     return min(ls, key=lambda x: abs(avg - x))
 #
 # print(func_av([1, 2, 3, 4, 5, 6, 7, 8, 9]))
-
-ls = [{'id': 932, 'name': 'Ihor', 'age': 23, 'status': 'True'}, {'id': 408, 'name': 'Olya', 'age': 20, 'status': 'False'}]
-
-
-for user in ls:
-    if user['id'] == 932:
-        ls.clear()
-print(ls)
