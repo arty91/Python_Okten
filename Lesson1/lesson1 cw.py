@@ -12,7 +12,8 @@
 
 приклад юзера {'id':1,'name':'Max', 'age':35,'status':False}
 '''
-import random
+
+from uuid import uuid4
 
 users_list = []
 
@@ -33,7 +34,7 @@ def print_menu():
 
 
 def option1():
-    id = random.randrange(100, 999)
+    id = str(uuid4())
     name = input('Please enter User name: ')
     age = int(input('Please enter User age: '))
     status = bool(input('Please enter User status: '))
@@ -59,7 +60,7 @@ def option3():
 
 
 def option4():
-    id_user = int(input('Please provide User Id you want to delete: '))
+    id_user = input('Please provide User Id you want to delete: ')
     for i in range(len(users_list)):
         if users_list[i]['id'] == id_user:
             del users_list[i]
