@@ -36,7 +36,6 @@
          х = 33294 -> п = 2, н = 3
 '''
 
-
 # def count_num(num: int):
 #     odd = sum(x % 2 != 0 for x in [int(x) for x in str(num)])
 #     even = len(str(num)) - odd
@@ -55,7 +54,21 @@
 [1, 3, 5, 7, 9, 11, 13]  => [[1], [3, 5], [7, 9, 11], [13]]
 '''
 
+# ще подумати!
 
+# def list_gen(n: int):
+#     ls = [x for x in range(n) if x % 2 != 0]
+#     new_ls = []
+#     i = 0
+#     k = 1
+#     while k <= n:
+#         new_ls.append(ls[i:k])
+#         i += 1
+#         k += 2
+#     return new_ls
+#
+#
+# print(list_gen(20))
 
 '''
 // Дан массив целых чисел, найдите тот, который встречается нечетное количество раз.
@@ -63,6 +76,13 @@
 //     [1,2,3,4,5,2,4,1,3] -> 5
 '''
 
+# def count_ls(ls: list) -> int:
+#     for i in ls:
+#         if ls.count(i) % 2 != 0:
+#             return i
+#
+#
+# print(count_ls([1, 1, 2, 2, 9, 9, 8]))
 
 '''
 //     Перевірити чи слово має в собі такі самі літери як і поеперднє слово.
@@ -72,6 +92,15 @@
 // GOOD | DOGO -> true
 '''
 
+# def check_words(s: str) -> bool:
+#     s = s.split(' | ')
+#     a = ''.join(sorted(s[0][:]))
+#     b = ''.join(sorted(s[1][:]))
+#     return True if a == b else False
+#
+# print(check_words('EXIT | AXET'))
+
+
 '''
 // Точная степень двойки
 // Дано натуральное число N.
@@ -79,7 +108,14 @@
 //     Операцией возведения в степень пользоваться нельзя!
 '''
 
-
+# def two_check(n: int) -> bool:
+#     if (n != 0) and (n & (n-1) == 0):
+#         return 'YES'
+#     else:
+#         return 'NO'
+#
+#
+# print(two_check(16))
 
 '''
 //  Сумма цифр числа
@@ -89,6 +125,16 @@
 //     Рекурсія)
 '''
 
+# def calc_sum(num: int) -> int:
+#     sum = 0
+#
+#     while (num != 0):
+#         sum = sum + (num % 10)
+#         num = num // 10
+#     return sum
+#
+#
+# print(calc_sum(12345))
 
 '''
 // Палиндром
@@ -96,6 +142,11 @@
 //     При решении этой задачи нельзя пользоваться циклами, в решениях на питоне нельзя использовать срезы с шагом, отличным от 1.
 '''
 
+# def check_palindrome(s: str):
+#     return 'YES' if s == s[::-1] else 'NO'
+#
+#
+# print(check_palindrome('anna'))
 
 '''
 // Количество единиц
@@ -105,14 +156,37 @@
 // 2176491947586100 -> 3
 '''
 
+# def find_one(num: int) -> int:
+#     return sum(1 for x in str(num).split('00')[0] if x == '1')
+#
+# print(find_one(2176491947586100))
+
 '''
 // Вирівняти багаторівневий масив в однорівневий
 //     [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
 // flat використовувати заборонено.
 '''
 
+# def list_to_list(ls: list) -> list:
+#     new_ls = []
+#
+#     for i in ls:
+#         if type(i) is list:
+#             for item in list_to_list(i):
+#                 new_ls.append(item)
+#         else:
+#             new_ls.append(i)
+#     return new_ls
+#
+#
+# print(list_to_list([1, 3, ['Hello', 'Wordd', [9, 6, 1], [11, 22, 33, [11, 11, 11, [22, 22, 22, [33, 33, 33]]]]], ['oops'], 9, [11, 11, 22, 33]]))
 
 '''
 // Знайти набільший елемент в масиві за допомогою reduce
 //     [1,6,9,0,17,88,4,7] -> 88
 '''
+
+# from functools import reduce
+#
+# ls = [1, 6, 9, 0, 17, 88, 4, 7]
+# print(reduce(lambda x, y: x if x > y else y, ls))
