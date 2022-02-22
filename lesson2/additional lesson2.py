@@ -54,17 +54,18 @@
 [1, 3, 5, 7, 9, 11, 13]  => [[1], [3, 5], [7, 9, 11], [13]]
 '''
 
-# ще подумати!
 
 # def list_gen(n: int):
 #     ls = [x for x in range(n) if x % 2 != 0]
 #     new_ls = []
-#     i = 0
-#     k = 1
-#     while k <= n:
-#         new_ls.append(ls[i:k])
+#     i, k, m = 0, 1, 1
+#
+#     while k < n:
+#         if ls[i:k]:  # checking chunk is not empty, if it is - do not add to new_ls
+#             new_ls.append(ls[i:k])
 #         i = k
-#         k += k+1
+#         k = k + m + 1  # key factor to complete task, as k should be 1, 3, 6, 9....
+#         m += 1
 #     return new_ls
 #
 #
@@ -136,6 +137,7 @@
 #
 # print(calc_sum(12345))
 
+# 2nd option
 # def calc_sum(num: int) -> int:
 #     return sum(int(digit) for digit in str(num))
 # or sum(map(int, str(num)))
