@@ -63,12 +63,12 @@
 #     k = 1
 #     while k <= n:
 #         new_ls.append(ls[i:k])
-#         i += 1
-#         k += 2
+#         i = k
+#         k += k+1
 #     return new_ls
 #
 #
-# print(list_gen(20))
+# print(list_gen(14))
 
 '''
 // Дан массив целых чисел, найдите тот, который встречается нечетное количество раз.
@@ -133,6 +133,12 @@
 #         num = num // 10
 #     return sum
 #
+#
+# print(calc_sum(12345))
+
+# def calc_sum(num: int) -> int:
+#     return sum(int(digit) for digit in str(num))
+# or sum(map(int, str(num)))
 #
 # print(calc_sum(12345))
 
