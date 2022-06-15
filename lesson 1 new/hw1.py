@@ -3,18 +3,31 @@
 # st = 'as 23 fdfdg544' введена строка
 # 2,3,5,4,4        #вивело в консолі.
 
-def num_find(s: str):
-	for i in s:
-		if i.isdigit():
-			print(i)
+# def digit_find(s: str):
+# 	return ','.join(str(el) for el in s if el.isnumeric())
+#
+# print(digit_find('as 23 fdfdg544'))
 
 # 2)написати прогу яка вибирає зі введеної строки числа і виводить їх
 # так як вони написані
 # наприклад:
 #   st = 'as 23 fdfdg544 34' #введена строка
 #   23, 544, 34              #вивело в консолі
-# #################################################################################
+
+# def number_find(s: str):
+# 	return ','.join(str(el) for el in [int(i) for i in ''.join((x if x in '0123456789' else ' ') for x in s).split()])
 #
+#
+# print(number_find('as 23 fdfdg544 34'))
+
+# for myself other option:
+# import re
+# def func2(string):
+#     return list(map(int, re.findall(r'\d+', string)))
+#
+#
+# print(func2('as 23 fdfdg544 34'))
+
 # list comprehension
 #
 # 1)есть строка:
@@ -22,11 +35,19 @@ def num_find(s: str):
 # записать каждый символ в лист поменяв его на верхний регистр
 # пример:
 # ['H', 'E', 'L', 'L', 'O', ',', ' ', 'W', 'O', 'R', 'L', 'D']
+
+# def string_to_upper(s: str):
+# 	return [i.upper() for i in s]
 #
+#
+# print(string_to_upper('Hello, world'))
+
 # 2) с диапазона от 0-50 записать в лист только не парные числа, при этом возвести их в квадрат
 # пример:
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, ...]
-#
+
+# print([el ** 2 for el in range(50) if el % 2 == 1])
+
 # function
 #
 # - створити функцію яка виводить ліст
