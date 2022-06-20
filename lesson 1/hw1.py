@@ -156,3 +156,77 @@
 #         i += 1
 #     j += 1
 #     print("\n")
+
+# 4) переделать первое задание под меню с помощью цикла
+# from functools import reduce
+#
+# ls = [2, 3, 4, 5, 6, 7, 11, 22, 44, 55, 66, 77, 88, 2, 11, 66, 7]
+# ls_dif = []
+# print(ls)
+#
+# menu_options = {
+# 	1: 'Find min value',
+# 	2: 'Remove duplicates',
+# 	3: 'Replace every 4th el to X',
+# 	4: 'Show el which is the closest to middle value',
+# 	5: 'Exit menu',
+# }
+#
+#
+# def print_menu():
+# 	for key in menu_options.keys():
+# 		print(key, '--', menu_options[key])
+#
+#
+# def option1():
+# 	ls_min = min(ls)
+# 	print(f'min value is  {ls_min}')
+# 	pass
+#
+#
+# def option2():
+# 	ls_unique = list(dict.fromkeys(ls))
+# 	print(ls_unique)
+# 	pass
+#
+#
+# def option3():
+# 	for i, y in enumerate(ls):
+# 		if i % 4 == 0:
+# 			ls[i] = 'X'
+# 	return ls
+# 	pass
+#
+#
+# def option4():
+# 	m = reduce(lambda x, y: x + y, ls) / len(ls)
+# 	for i in ls:
+# 		ls_dif.append(m - i)
+# 	for y, i in enumerate(ls_dif):
+# 		if i < 0:
+# 			ls_dif[y] = i * (-1)
+# 	print(ls[ls_dif.index(min(ls_dif))])
+# 	pass
+#
+#
+# while True:
+# 	print_menu()
+# 	print('--------------------------------------------')
+# 	option = int(input('Your choice: '))
+#
+# 	if option == 1:
+# 		option1()
+# 	elif option == 2:
+# 		option2()
+# 	elif option == 3:
+# 		option3()
+# 		print(ls)
+# 	elif option == 4:
+# 		option4()
+# 	elif option == 5:
+# 		print('Program has finished. Goodbye!')
+# 		exit()
+# 	else:
+# 		print('--------------------------------------------')
+# 		print('Please select your option from 1 to 5.')
+# 		print('--------------------------------------------')
