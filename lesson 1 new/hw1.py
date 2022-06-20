@@ -15,7 +15,7 @@
 #   23, 544, 34              #вивело в консолі
 
 # def number_find(s: str):
-# 	return ','.join(str(el) for el in [int(i) for i in ''.join((x if x in '0123456789' else ' ') for x in s).split()])
+# 	return ','.join(str(el) for el in [int(i) for i in ''.join(x if x in '0123456789' else ' ' for x in s).split()])
 #
 #
 # print(number_find('as 23 fdfdg544 34'))
