@@ -15,7 +15,7 @@
 #         nonlocal todo_list
 #         todo_list.append(new_task)
 #
-#     def get_all() -> list:
+#     def get_all() -> list[str]:
 #         return todo_list
 #
 #     return get_all, add_todo
