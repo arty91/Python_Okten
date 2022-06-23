@@ -20,6 +20,7 @@
 #
 #     return get_all, add_todo
 #
+# #function de-structurization:
 #
 # get_all, add_todo = notebook()
 #
