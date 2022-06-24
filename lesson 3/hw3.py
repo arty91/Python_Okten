@@ -2,17 +2,22 @@
 #
 # пример [1,2,3,4,2,5,1] => [ 3, 4, 5 ]
 
-# def find_only_unique(ls: list) -> list:
+# def find_only_unique(ls: list):
 # 	res = []
+# 	duplicates = []
 # 	for i in ls:
 # 		if i not in res:
 # 			res.append(i)
 # 		else:
+# 			duplicates.append(i)
+# 	for i in duplicates:
+# 		if i in res:
 # 			res.remove(i)
 # 	return res
 #
 #
 # print(find_only_unique([1, 2, 3, 4, 2, 5, 1]))
+
 
 # Создать класс Rectangle:
 # -конструктор принимает две стороны x,y
@@ -30,16 +35,22 @@ class Rectangle:
 		self.x = x
 		self.y = y
 
-	def __repr__(self):
-		return repr(f'{self.x}, {self.y}')
-
 	def sum_func(self):
-		return x * y
+		return self.x * self.y
+
+	def len_func(self):
+		return (self.x + self.y) * 2
 
 
-rectangles = [Rectangle(2, 5), Rectangle(3, 6)]
+rectangle1 = Rectangle(1, 7)
+rectangle2 = Rectangle(3, 4)
 
-print(rectangles)
+print(rectangle1.sum_func() + rectangle2.sum_func())
+print(rectangle1.sum_func() - rectangle2.sum_func())
+print(rectangle1.sum_func() == rectangle2.sum_func())
+print(rectangle1.sum_func() != rectangle2.sum_func())
+print(rectangle1.sum_func() > rectangle2.sum_func())
+print(rectangle1.sum_func() < rectangle2.sum_func())
 
 # создать класс Human (name, age)
 # создать два класса Prince и Cinderella:
