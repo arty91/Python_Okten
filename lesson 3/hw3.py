@@ -35,22 +35,25 @@ class Rectangle:
 		self.x = x
 		self.y = y
 
-	def sum_func(self):
-		return self.x * self.y
+	def __add__(self, other):
+		return self.x * self.y + other.x * other.y
 
-	def len_func(self):
+	def __sub__(self, other):
+		return self.x * self.y - other.x * other.y
+
+	def __len__(self):
 		return (self.x + self.y) * 2
 
 
 rectangle1 = Rectangle(1, 7)
 rectangle2 = Rectangle(3, 4)
 
-print(rectangle1.sum_func() + rectangle2.sum_func())
-print(rectangle1.sum_func() - rectangle2.sum_func())
-print(rectangle1.sum_func() == rectangle2.sum_func())
-print(rectangle1.sum_func() != rectangle2.sum_func())
-print(rectangle1.sum_func() > rectangle2.sum_func())
-print(rectangle1.sum_func() < rectangle2.sum_func())
+print(rectangle1 + rectangle2)
+print(rectangle1 - rectangle2)
+
+print(len(rectangle1))
+print(len(rectangle2))
+
 
 # создать класс Human (name, age)
 # создать два класса Prince и Cinderella:
