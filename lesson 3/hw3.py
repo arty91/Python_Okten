@@ -41,15 +41,31 @@ class Rectangle:
 	def __sub__(self, other):
 		return self.x * self.y - other.x * other.y
 
+	def __lt__(self, other):
+		return self.x * self.y < other.x * other.y
+
+	def __gt__(self, other):
+		return self.x * self.y > other.x * other.y
+
+	def __eq__(self, other):
+		return self.x * self.y == other.x * other.y
+
+	def __ne__(self, other):
+		return not self.x * self.y == other.x * other.y
+
 	def __len__(self):
 		return (self.x + self.y) * 2
 
 
 rectangle1 = Rectangle(1, 7)
-rectangle2 = Rectangle(3, 4)
+rectangle2 = Rectangle(3, 5)
 
 print(rectangle1 + rectangle2)
 print(rectangle1 - rectangle2)
+print(rectangle1 < rectangle2)
+print(rectangle1 > rectangle2)
+print(rectangle1 == rectangle2)
+print(rectangle1 != rectangle2)
 
 print(len(rectangle1))
 print(len(rectangle2))
