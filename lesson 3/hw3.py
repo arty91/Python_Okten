@@ -30,45 +30,45 @@
 #   при вызове метода len() подсчитывать сумму сторон
 
 
-class Rectangle:
-	def __init__(self, x, y):
-		self.x = x
-		self.y = y
-
-	def __add__(self, other):
-		return self.x * self.y + other.x * other.y
-
-	def __sub__(self, other):
-		return self.x * self.y - other.x * other.y
-
-	def __lt__(self, other):
-		return self.x * self.y < other.x * other.y
-
-	def __gt__(self, other):
-		return self.x * self.y > other.x * other.y
-
-	def __eq__(self, other):
-		return self.x * self.y == other.x * other.y
-
-	def __ne__(self, other):
-		return not self.x * self.y == other.x * other.y
-
-	def __len__(self):
-		return (self.x + self.y) * 2
-
-
-rectangle1 = Rectangle(1, 7)
-rectangle2 = Rectangle(3, 5)
-
-print(rectangle1 + rectangle2)
-print(rectangle1 - rectangle2)
-print(rectangle1 < rectangle2)
-print(rectangle1 > rectangle2)
-print(rectangle1 == rectangle2)
-print(rectangle1 != rectangle2)
-
-print(len(rectangle1))
-print(len(rectangle2))
+# class Rectangle:
+# 	def __init__(self, x, y):
+# 		self.x = x
+# 		self.y = y
+#
+# 	def __add__(self, other):
+# 		return self.x * self.y + other.x * other.y
+#
+# 	def __sub__(self, other):
+# 		return self.x * self.y - other.x * other.y
+#
+# 	def __lt__(self, other):
+# 		return self.x * self.y < other.x * other.y
+#
+# 	def __gt__(self, other):
+# 		return self.x * self.y > other.x * other.y
+#
+# 	def __eq__(self, other):
+# 		return self.x * self.y == other.x * other.y
+#
+# 	def __ne__(self, other):
+# 		return not self.x * self.y == other.x * other.y
+#
+# 	def __len__(self):
+# 		return (self.x + self.y) * 2
+#
+#
+# rectangle1 = Rectangle(1, 7)
+# rectangle2 = Rectangle(3, 5)
+#
+# print(rectangle1 + rectangle2)
+# print(rectangle1 - rectangle2)
+# print(rectangle1 < rectangle2)
+# print(rectangle1 > rectangle2)
+# print(rectangle1 == rectangle2)
+# print(rectangle1 != rectangle2)
+#
+# print(len(rectangle1))
+# print(len(rectangle2))
 
 
 # создать класс Human (name, age)
@@ -78,3 +78,39 @@ print(len(rectangle2))
 #
 # в классе золушки должна быть переменная count которая будет считать сколько экземпляров класса золушка было создано
 # и метод класса который будет показывать это количеств
+
+class Human:
+	def __init__(self, name, age):
+		self.age = age
+		self.name = name
+
+
+class Cinderella(Human):
+	count = 0
+
+	def __init__(self, name, age, shoe_size):
+		super().__init__(name, age)
+		self.shoe_size = shoe_size
+		Cinderella.count += 1
+
+	@classmethod
+	def inc_count(cls):
+		cls.count += 1
+
+	@classmethod
+	def get_count(cls):
+		return cls.count
+
+
+class Prince(Human):
+	def __init__(self, name, age, shoe_found):
+		super().__init__(name, age)
+		self.shoe_found = shoe_found
+
+
+one = Cinderella('Olya', 19, 36)
+two = Cinderella('Kira', 21, 35)
+three = Cinderella('Nadia', 23, 38)
+
+
+print(Cinderella.get_count())
