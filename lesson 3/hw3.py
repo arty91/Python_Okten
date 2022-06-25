@@ -79,38 +79,47 @@
 # в классе золушки должна быть переменная count которая будет считать сколько экземпляров класса золушка было создано
 # и метод класса который будет показывать это количеств
 
-class Human:
-	def __init__(self, name, age):
-		self.age = age
-		self.name = name
-
-
-class Cinderella(Human):
-	count = 0
-
-	def __init__(self, name, age, shoe_size):
-		super().__init__(name, age)
-		self.shoe_size = shoe_size
-		Cinderella.count += 1
-
-	@classmethod
-	def inc_count(cls):
-		cls.count += 1
-
-	@classmethod
-	def get_count(cls):
-		return cls.count
-
-
-class Prince(Human):
-	def __init__(self, name, age, shoe_found):
-		super().__init__(name, age)
-		self.shoe_found = shoe_found
-
-
-one = Cinderella('Olya', 19, 36)
-two = Cinderella('Kira', 21, 35)
-three = Cinderella('Nadia', 23, 38)
-
-
-print(Cinderella.get_count())
+# from typing import List
+#
+#
+# class Human:
+# 	def __init__(self, name, age):
+# 		self.age = age
+# 		self.name = name
+#
+#
+# class Cinderella(Human):
+# 	count = 0
+#
+# 	def __init__(self, name, age, shoe_size):
+# 		super().__init__(name, age)
+# 		self.shoe_size = shoe_size
+# 		Cinderella.count += 1
+#
+# 	def __str__(self):
+# 		return str(self.__dict__)
+#
+#
+# class Prince(Human):
+# 	def __init__(self, name, age, shoe_found):
+# 		super().__init__(name, age)
+# 		self.shoe_found = shoe_found
+#
+# 	def find_shoe(self, cinderellas: List[Cinderella]):
+# 		for i in cinderellas:
+# 			if self.shoe_found == i.shoe_size:
+# 				return i
+# 		return 'Not found'
+#
+#
+# cinderellas_list = [
+# 	Cinderella('Olya', 19, 36),
+# 	Cinderella('Kira', 22, 37),
+# 	Cinderella('Maya', 28, 34),
+# 	Cinderella('Ivana', 18, 35)
+# ]
+#
+# prince = Prince('Oleg', 29, 34)
+#
+# print(prince.find_shoe(cinderellas_list))
+# print(Cinderella.count)
