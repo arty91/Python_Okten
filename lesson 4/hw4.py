@@ -23,6 +23,8 @@
 #     '5) Поиск по названию покупки'
 #     '9) Выход'
 # - можете придумать свои пункты
+# delete all purchases
+# cheapest purchase
 
 import json
 from typing import TypedDict, List
@@ -64,7 +66,7 @@ class Note:
 		print(f'{sum_prices=}')
 
 	def max_prices(self):
-		print(max(self.__notes, key=lambda item['price']))
+		print(max(self.__notes, key=lambda item: item['price']))
 
 	def find_by_name(self):
 		find_name = input('What is the name of purchase: ')
@@ -74,28 +76,29 @@ class Note:
 				return
 		print('Not found')
 
+
 note = Note('purchases.json')
 
 while True:
-	print('Create note')
-	print('Show all notes')
-	print('Total sum of purchases')
-	print('The most expensive purchase')
-	print('Find by name')
-	print('exit')
+	print('1. Create note')
+	print('2. Show all notes')
+	print('3. Total sum of purchases')
+	print('4. The most expensive purchase')
+	print('5. Find by name')
+	print('6. exit')
 
 	choice = input('Please make a choice: ')
 
 	match choice:
-		case 1:
+		case '1':
 			note.add()
-		case 2:
+		case '2':
 			note.show_all_notes()
-		case 3:
+		case '3':
 			note.sum_prices()
-		case 4:
+		case '4':
 			note.max_prices()
-		case 5:
+		case '5':
 			note.find_by_name()
-		case 6:
+		case '6':
 			break
