@@ -106,9 +106,9 @@
 # 		self.shoe_found = shoe_found
 #
 # 	def find_shoe(self, cinderellas: List[Cinderella]):
-# 		for i in cinderellas:
-# 			if self.shoe_found == i.shoe_size:
-# 				return i
+# 		for cinderella in cinderellas:
+# 			if self.shoe_found == cinderella.shoe_size:
+# 				return cinderella
 # 		return 'Not found'
 #
 #
@@ -123,3 +123,7 @@
 #
 # print(prince.find_shoe(cinderellas_list))
 # print(Cinderella.count)
+from typing import List
+
+
+
