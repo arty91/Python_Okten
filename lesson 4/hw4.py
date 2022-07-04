@@ -58,14 +58,16 @@ class Note:
 		if not self.__notes:
 			print('List of notes is empty')
 			return
+		print('List of notes: ')
 		for item in self.__notes:
 			print(item)
 
 	def sum_prices(self):
 		sum_prices = sum(item['price'] for item in self.__notes)
-		print(f'{sum_prices=}')
+		print(f'Sum of purchases is: {sum_prices}')
 
 	def max_prices(self):
+		print('The most expensive purchase is: ')
 		print(max(self.__notes, key=lambda item: item['price']))
 
 	def find_by_name(self):
@@ -77,19 +79,29 @@ class Note:
 		print('Not found')
 
 	def min_prices(self):
-		print(max(self.__notes, key=lambda item: item['price']))
+		print('The cheapest purchase is: ')
+		print(min(self.__notes, key=lambda item: item['price']))
+
+	def clear_notes(self):
+		self.__notes.clear()
+		print('List of notes has been cleared.')
+
 
 note = Note('purchases.json')
 
 while True:
+	print('--------------------------------')
 	print('1. Create note')
 	print('2. Show all notes')
 	print('3. Total sum of purchases')
 	print('4. The most expensive purchase')
 	print('5. Find by name')
-	print('6. exit')
-
+	print('6. The cheapest purchase')
+	print('7. Clear purchases')
+	print('8. exit')
+	print('--------------------------------')
 	choice = input('Please make a choice: ')
+	print('--------------------------------')
 
 	match choice:
 		case '1':
@@ -103,4 +115,8 @@ while True:
 		case '5':
 			note.find_by_name()
 		case '6':
+			note.min_prices()
+		case '7':
+			note.clear_notes()
+		case '8':
 			break
