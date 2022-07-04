@@ -35,10 +35,10 @@ NoteType = TypedDict('NoteType', {'purchase': str, 'price': int})
 class Note:
 	def __init__(self, file_name):
 		self.__file_name = file_name
-		self.__notes: List[NoteType] = []
+		self.__notes: list[NoteType] = []
 		try:
 			with open(file_name) as file:
-				self.__notes: List[NoteType] = json.load(file)
+				self.__notes: list[NoteType] = json.load(file)
 		except:
 			pass
 
@@ -76,6 +76,8 @@ class Note:
 				return
 		print('Not found')
 
+	def min_prices(self):
+		print(max(self.__notes, key=lambda item: item['price']))
 
 note = Note('purchases.json')
 
